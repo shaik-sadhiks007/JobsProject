@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+.icon {
+    color: rgb(53, 117, 227);
+    text-shadow: -4px -4px rgb(170, 193, 231);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn-login {
+    background-color: white;
+    border: 0.5px solid black;
+    padding: 8px 30px !important;
+    border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn-signup {
+    background-color: rgb(53, 117, 227) !important;
+    color: white !important;
+    padding: 8px 20px !important;
+    border-radius: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.innerText {
+    color: rgb(53, 117, 227);
+    background-color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.jbn {
+    background-color: rgb(53, 117, 227) !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shadow {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+.btn-check:checked+label {
+    background-color: rgb(183, 200, 229) !important;
+    color: rgb(53, 117, 227) !important;
+    border: 1px solid rgb(53, 117, 227) !important;
+}
+
+.btn-group>.btn-group:not(:first-child)>.btn,
+.btn-group>.btn:nth-child(n+3),
+.btn-group>:not(.btn-check)+.btn {
+    border-radius: 0 !important;
+}
+
+.btn-group>.btn-group:not(:last-child)>.btn,
+.btn-group>.btn.dropdown-toggle-split:first-child,
+.btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-radius: 0 !important;
+}
+
+.circ {
+    font-size: 2px;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+}
+
+.contact-btn,
+.contact-btn:hover {
+    background-color: rgb(53, 117, 227);
+    color: white;
 }
