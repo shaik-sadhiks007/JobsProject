@@ -14,7 +14,6 @@ function useCustomHook() {
     const [isLoggedIn,setIsLoggedIn] = useState(false)
     const [user,setUser] = useState(null)
 
-    console.log(credentials,'hook')
 
     useEffect(() => {
         getData();
@@ -96,7 +95,6 @@ function useCustomHook() {
         }
 
         if (salaryFilter) {
-            console.log('inside search')
             filteredPosts = filteredPosts.filter(job => {
                 const salary = parseInt(job.salary.split('-')[0].replace(/[^\d]/g, ''));
                 switch (salaryFilter) {
