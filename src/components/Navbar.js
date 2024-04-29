@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom';
+import { JobsContext } from './JobsContext';
 
 function Navbar() {
+    const { isLoggedIn,setIsLoggedIn,user} = useContext(JobsContext)
+
     return (
         <nav className="navbar navbar-expand-lg border-bottom border-secondary mt-2 pb-3">
             <div className="container">
@@ -31,14 +35,26 @@ function Navbar() {
                         </ul>
                     </div>
                 </div>
-                <div className="d-flex">
-                    <button className="btn btn-login border border-black me-2 fs-5" type="submit">Login</button>
-                    <button className="btn btn-signup fs-5" type="submit">Sign up</button>
-                </div>
-                <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                    aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+                {
+                    isLoggedIn ? (
+                        <>
+                           <div className='fs-3 me-2 capitalize'>{user}</div> 
+                          <button className="btn btn-signup fs-5" onClick={() => setIsLoggedIn(false)}>Log Out</button>
+                        </>
+                    ) : (
+                        <>
+                            <div className="d-flex">
+                                <Link to='/login'><button className="btn btn-login border border-black me-2 fs-5">Login</button></Link>
+                                <Link to='/register'><button className="btn btn-signup fs-5 " >Sign up</button></Link>
+                            </div>
+                            <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
+                            </button>
+                        </>
+                    )
+                }
+
             </div>
         </nav>
     )

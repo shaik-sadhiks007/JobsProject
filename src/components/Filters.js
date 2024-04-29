@@ -1,32 +1,28 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react';
 import { JobsContext } from './JobsContext';
 
 function Filters() {
-
-    const { setLocation, setWorkExperience, setDateFilter, setSalaryFilter } = useContext(JobsContext)
+    const { setLocation, setWorkExperience, setDateFilter, setSalaryFilter } = useContext(JobsContext);
 
     const handleLocation = (event) => {
         const label = event.target.nextElementSibling.textContent;
-        setLocation(label)
-    }
+        setLocation(label);
+    };
     const handleWork = (event) => {
         const label = event.target.nextElementSibling.textContent;
-        setWorkExperience(label)
-    }
+        setWorkExperience(label);
+    };
     const handleDateFilter = (event) => {
         const filterValue = event.target.nextElementSibling.textContent;
         setDateFilter(filterValue);
     };
     const handleSalaryFilter = (event) => {
         const filterValue = event.target.nextElementSibling.textContent;
-        console.log(filterValue)
         setSalaryFilter(filterValue);
     };
 
-
-
     return (
-        <div className="col-3">
+        <>
             <div className="shadow p-3 pt-0 " >
 
                 <h3 className="mt-4">Filters</h3>
@@ -56,16 +52,6 @@ function Filters() {
                     <label htmlFor="within45">APAC</label>
                 </div>
                 <h4>Salary</h4>
-                {/* <div className="btn-group" role="group">
-    <input type="radio" id="option11" name="options" className="btn-check "/>
-    <label className="btn border border-end-0" htmlFor="option11">Hourly</label>
-
-    <input type="radio" id="option22" name="options" className="btn-check"/>
-    <label className="btn border" htmlFor="option22">Monthly</label>
-
-    <input type="radio" id="option33" name="options" className="btn-check" />
-    <label className="btn border" htmlFor="option33">Yearly</label>
-</div> */}
                 <div className="form-check mt-2">
                     <input type="radio" id="any" name="option2" onChange={handleSalaryFilter} />
                     <label htmlFor="any">Any</label>
@@ -124,11 +110,8 @@ function Filters() {
                 </div>
 
             </div>
-
-        </div>
-
-
-    )
+        </>
+    );
 }
 
-export default Filters
+export default Filters;

@@ -10,6 +10,11 @@ function useCustomHook() {
     const [dateFilter, setDateFilter] = useState(null);
     const [salaryFilter, setSalaryFilter] = useState(null);
     const [jobs,setJobs] = useState(null)
+    const [credentials,setCredentials] = useState([])
+    const [isLoggedIn,setIsLoggedIn] = useState(false)
+    const [user,setUser] = useState(null)
+
+    console.log(credentials,'hook')
 
     useEffect(() => {
         getData();
@@ -115,7 +120,7 @@ function useCustomHook() {
 
 
     return {
-        position, setPosition, location, setLocation, posts,setPosts, handleSearch, setWorkExperience, workExperience, setDateFilter,setSalaryFilter,jobs
+        position, setPosition, location, setLocation, posts,setPosts, handleSearch, setWorkExperience, workExperience, setDateFilter,setSalaryFilter,jobs,credentials,setCredentials,isLoggedIn,setIsLoggedIn,user,setUser
     }
 }
 

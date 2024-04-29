@@ -3,7 +3,7 @@ import React from 'react'
 function Contact() {
     
     return (
-        <div className="contact col-3">
+        <>
             <div className="final d-flex flex-column shadow p-3">
                 <div className="email d-flex flex-row align-items-center">
                     <i className="fa-solid fa-envelope fs-5 me-2"></i>
@@ -23,7 +23,7 @@ function Contact() {
 
                 <button className="btn contact-btn">Upload Your resume</button>
             </div>
-        </div>
+        </>
     )
 }
 

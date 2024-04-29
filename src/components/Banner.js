@@ -27,7 +27,7 @@ function Banner() {
                     <input type="text" className="col-11 border-0" style={{outline: "none"}} placeholder="Location" onChange={(event) => setLocation(event.target.value)}/>
                 </div>
 
-                <button className="col-2 text-white border-0 jbn" onClick={() => handleSearch()}>Search job</button>
+                <button className="col-md-2 col-sm-3 text-white border-0 jbn flex-nowrap" onClick={() => handleSearch()}>Search job</button>
             </div>
         </div>
     </div>

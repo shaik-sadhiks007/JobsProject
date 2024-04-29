@@ -1,36 +1,25 @@
 import './App.css';
-import Banner from './components/Banner';
-import Contact from './components/Contact';
-import Filters from './components/Filters';
-import Jobs from './components/Jobs';
-import Navbar from './components/Navbar';
+import { useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Login from './components/Login';
+import Register from './components/Register';
 import { JobsContext } from './components/JobsContext';
 import useCustomHook from './components/useCustomHook';
+import Home from './components/Home';
 
 function App() {
 
-  const { position, setPosition, location, setLocation,posts,handleSearch,setWorkExperience,workExperience,setDateFilter,setSalaryFilter,jobs,setPosts } = useCustomHook();
-
-
-  const data = {position, setPosition, location, setLocation,posts,handleSearch,setWorkExperience,workExperience,setDateFilter,setSalaryFilter,jobs,setPosts}
+  const { position, setPosition, location: customLocation, setLocation, posts, handleSearch, setWorkExperience, workExperience, setDateFilter, setSalaryFilter, jobs, setPosts, credentials, setCredentials,isLoggedIn,setIsLoggedIn,user,setUser } = useCustomHook();
+  const data = { position, setPosition, location: customLocation, setLocation, posts, handleSearch, setWorkExperience, workExperience, setDateFilter, setSalaryFilter, jobs, setPosts, credentials, setCredentials,isLoggedIn,setIsLoggedIn,user,setUser }
 
   return (
     <JobsContext.Provider value={data}>
-
-      <Navbar />
-      <Banner />
-      <div className="container d-flex flex-lg-row flex-column column-gap-lg-4 row-gap-4 my-5 ">
-        <Filters />
-        <Jobs />
-        <Contact />
-      </div>
-      
-
-      <div className='text-center'>api is provided by remotive.com</div>
-
-
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/register' element={<Register />}></Route>
+      </Routes>
     </JobsContext.Provider>
-
   );
 }
 

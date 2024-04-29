@@ -35,7 +35,7 @@ function Jobs() {
     }
 
     return (
-        <div className="jobs col-6">
+        <>
             <div className="3177">
                 <div className="d-flex justify-content-between">
                 <h2 className="">{jobs} Jobs</h2>
@@ -66,7 +66,7 @@ function Jobs() {
                         {eachJob?.tags.map((eachTag,index) => (
                             <span className="badge badge-secondary bg-danger me-2 mb-2"key={index}>{eachTag}</span>
                         ))}
-                        <div className="address d-flex flex-row align-items-center">
+                        <div className="address d-flex flex-row flex-wrap align-items-center">
                             <i className="fa-solid fa-location-dot me-2"></i>
                             <p className="add m-0">{eachJob.candidate_required_location}</p>
                             <i className="fa-solid fa-circle circ mx-3"></i>
@@ -90,7 +90,7 @@ function Jobs() {
                 </div>
             ))}
 
-        </div>
+        </>
     )
 }
 
