@@ -12,7 +12,7 @@ root.render(
 
 
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/JobsProject'>
       <App />
     </BrowserRouter>
   </React.StrictMode>
