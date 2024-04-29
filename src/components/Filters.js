@@ -24,7 +24,6 @@ function Filters() {
     return (
         <>
             <div className="shadow p-3 pt-0 " >
-
                 <h3 className="mt-4">Filters</h3>
                 <h4>Location</h4>
                 <div className="form-check">
